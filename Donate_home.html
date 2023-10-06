@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+#popupContainer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#popupContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#closePopupBtn {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
+
+</style>
+
+<body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Pop-up Header Example</title>
+</head>
+<body>
+  <header>
+    <h1>Your Website Header</h1>
+    <button id="popupBtn">Open Pop-up</button>
+  </header>
+
+  <div id="popupContainer">
+    <div id="popupContent">
+      <h2>Pop-up Content</h2>
+      <p>This is some content inside the pop-up.</p>
+      <button id="closePopupBtn">Close Pop-up</button>
+    </div>
+  </div>
+
+  <!-- Your other website content goes here -->
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+  const popupContainer = document.getElementById('popupContainer');
+  const popupBtn = document.getElementById('popupBtn');
+  const closePopupBtn = document.getElementById('closePopupBtn');
+
+  popupBtn.addEventListener('click', function () {
+    popupContainer.style.display = 'block';
+  });
+
+  closePopupBtn.addEventListener('click', function () {
+    popupContainer.style.display = 'none';
+  });
+});
+
+  </script>
+</body>
+</html>

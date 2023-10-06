@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Upcoming Events Calendar</title>
+</head>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.calendar-container {
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+.calendar {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.event {
+  margin-bottom: 10px;
+}
+
+</style>
+
+<body>
+  <div class="calendar-container">
+    <div class="calendar" id="calendar">
+      <!-- Calendar events will be displayed here -->
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="script.js"></script>
+<script>
+    $(document).ready(function () {
+    // Example event data (you can replace this with data from a database or API)
+    const events = [
+        { title: 'Event 1', date: '2023-10-10' },
+        { title: 'Event 2', date: '2023-10-15' },
+        { title: 'Event 3', date: '2023-11-01' }
+    ];
+
+    // Display events on the calendar
+    displayEvents(events);
+});
+
+function displayEvents(events) {
+    const calendar = $('#calendar');
+
+    // Sort events by date
+    events.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+    // Loop through events and display them
+    for (const event of events) {
+        const eventDate = new Date(event.date);
+        const formattedDate = eventDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+        const eventElement = `<div class="event">
+            <strong>${event.title}</strong>
+            <p>Date: ${formattedDate}</p>
+        </div>`;
+
+        calendar.append(eventElement);
+    }
+}
+
+</script>
+
+</body>
+</html>

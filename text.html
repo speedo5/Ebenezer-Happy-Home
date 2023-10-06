@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #text-container {
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="text-container"></div>
+
+    <script>
+        const textContainer = document.getElementById("text-container");
+        const textToType = "This is a typing animation effect.";
+
+        function typeText() {
+            let currentIndex = 0;
+            const typingInterval = setInterval(() => {
+                textContainer.textContent = textToType.slice(0, currentIndex);
+                currentIndex++;
+
+                if (currentIndex > textToType.length) {
+                    clearInterval(typingInterval);
+                }
+            }, 100); // Adjust typing speed by changing the interval (milliseconds)
+        }
+
+        // Start the typing animation when the page loads
+        window.onload = typeText;
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Changing Sentences with Animation</title>
+  <style>
+    #textContainer {
+      font-size: 18px;
+      padding: 20px;
+      width: 400px;
+      margin: 50px auto;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    .fadeIn {
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="textContainer"></div>
+
+  <script>
+    const sentences = [
+      "This is the first sentence.",
+      "Here comes the second sentence.",
+      "And now the third sentence.",
+      "Last but not least, the fourth sentence."
+    ];
+
+    let currentIndex = 0;
+
+    function changeSentenceWithAnimation() {
+      const textContainer = document.getElementById('textContainer');
+      textContainer.classList.remove('fadeIn');
+
+      setTimeout(() => {
+        textContainer.textContent = sentences[currentIndex];
+        textContainer.classList.add('fadeIn');
+        currentIndex = (currentIndex + 1) % sentences.length;
+
+        // Change sentence every 3 seconds (adjust as needed)
+        setTimeout(changeSentenceWithAnimation, 3000);
+      }, 500);
+    }
+
+    // Initial call to start the animation
+    changeSentenceWithAnimation();
+  </script>
+</body>
+</html>

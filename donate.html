@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  body{
+    overflow:hidden;
+
+  }
+    * {
+  margin: 0
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #6699cc;
+}
+
+.container h1 {
+  color: white;
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+.registartion-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-family: sans-serif;
+  background-color: #154a68;
+  padding: 20px;
+}
+
+.registartion-form input,
+.registartion-form select,
+.registartion-form textarea {
+  border: none;
+  padding: 5px;
+  margin-top: 10px;
+  font-family: sans-serif;
+}
+
+.registartion-form input:focus,
+.registartion-form textarea:focus {
+  box-shadow: 3px 3px 10px rgb(228, 228, 228), -3px -3px 10px rgb(224, 224, 224);
+}
+
+.registartion-form .submit {
+  width: 100%;
+  padding: 8px 0;
+  font-size: 20px;
+  color: rgb(44, 44, 44);
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.registartion-form .submit:hover {
+  box-shadow: 3px 3px 6px rgb(255, 214, 176);
+}
+
+#popupContainer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#popupContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+#popupContent h2{
+font-family: Tahoma;
+}
+#popupContent p{
+  font-size: 1.5vw;
+  font-family: Tahoma;
+
+}
+#closePopupBtn {
+  background-color: #333;
+  margin: 10px;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+#popupBtn{
+background-color: orangered;
+color: #fff;
+}
+
+</style>
+
+<body>
+    
+  Kindly provide basic information
+    <div class="container">
+      <h1>Just getting to know you!</h1>
+      <form name="registration" class="registartion-form" onsubmit="return formValidation()">
+        <table>
+          <tr>
+            <td><label for="name">Name:</label></td>
+            <td><input type="text" name="name" id="name" placeholder="your name"></td>
+          </tr>
+          <tr>
+            <td><label for="email">Email:</label></td>
+            <td><input type="text" name="email" id="email" placeholder="your email"></td>
+          </tr>
+         <!-- 
+          <tr>
+            <td><label for="password">Password:</label></td>
+            <td><input type="password" name="password" id="password"></td>
+          </tr>--> 
+          <tr>
+            <td><label for="phoneNumber">Phone Number:</label></td>
+            <td><input type="number" name="phoneNumber" id="phoneNumber"></td>
+          </tr>
+          <tr>
+            <td><label for="gender">Gender:</label></td>
+            <td>Male: <input type="radio" name="gender" value="male">
+              Female: <input type="radio" name="gender" value="female">
+              Other: <input type="radio" name="gender" value="other"></td>
+          </tr>
+          <tr>
+            <td><label for="language">language</label></td>
+            <td>
+              <select name="language" id="language">
+                <option value="">Select language</option>
+                <option value="English">English</option>
+                <option value="Spanish">Spanish</option>
+                <option value="Hindi">Hindi</option>
+                <option value="Arabic">Arabic</option>
+                <option value="Russian">Russian</option>
+              </select>
+            </td>
+          </tr>
+
+        <!-- 
+          <tr>
+            <td><label for="zipcode">Zip Code:</label></td>
+            <td><input type="number" name="zipcode" id="zipcode"></td>
+          </tr>  -->
+
+          <tr> 
+            <td><label for="about">About:</label></td>
+            <td><textarea name="about" id="about" placeholder="Write about yourself..."></textarea></td>
+          </tr>
+          <tr>
+            <td colspan="2"><input type="submit" class="submit"  value="Register" /></td>
+          </tr>
+          <tr>
+            <td colspan="2"><input type="submit" class="submit" id="popupBtn" value="Donate" /></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+
+
+
+   
+    <div id="popupContainer">
+      <div id="popupContent">
+        <h2>Donate Via Mpesa or Paypal</h2>
+        <br>
+        <p>Giving to the needy is lending the Lord!</p> 
+        <br>
+        <form name="registration" class="registartion-form">
+        <table>
+<tr>
+<th>Paypal Donation</th>
+<th>Mpesa Donation</th>
+</tr>
+<tr>
+  <td> <button>Paypal</button></td>
+  <td> <button>Mpesa</button></td>
+</tr>
+
+ </table>      
+</form>
+        <button id="closePopupBtn">Close</button>
+      </div>
+    </div>
+    
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+    const popupContainer = document.getElementById('popupContainer');
+    const popupBtn = document.getElementById('popupBtn');
+    const closePopupBtn = document.getElementById('closePopupBtn');
+    
+    popupBtn.addEventListener('click', function () {
+      popupContainer.style.display = 'block';
+    });
+    
+    closePopupBtn.addEventListener('click', function () {
+      popupContainer.style.display = 'none';
+    });
+    });
+    
+    </script>
+    
+    
+
+<script>
+    // Select all input elements for varification
+const name = document.getElementById("name");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const phoneNumber = document.getElementById("phoneNumber");
+const gender = document.registration;
+const language = document.getElementById("language");
+const zipcode = document.getElementById("zipcode");
+
+// function for form varification
+function formValidation() {
+  
+  // checking name length
+  if (name.value.length < 2 || name.value.length > 20) {
+    alert("Kindly proceed to donate");
+    name.focus();
+    return false;
+  }
+  // checking email
+  if (email.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+    alert("Please enter a valid email!");
+    email.focus();
+    return false;
+  }
+  // checking password
+  if (!password.value.match(/^.{5,15}$/)) {
+    alert("Password length must be between 5-15 characters!");
+    password.focus();
+    return false;
+  }
+  // checking phone number
+  if (!phoneNumber.value.match(/^[1-9][0-9]{9}$/)) {
+    alert("Phone number must be 10 characters long number and first digit can't be 0!");
+    phoneNumber.focus();
+    return false;
+  }
+  // checking gender
+  if (gender.gender.value === "") {
+    alert("Please select your gender!");
+    return false;
+  }
+  // checking language
+  if (language.value === "") {
+    alert("Please select your language!")
+    return false;
+  }
+  // checking zip code
+  if (!zipcode.value.match(/^[0-9]{6}$/)) {
+    alert("Go a head and Donate");
+    zipcode.focus();
+    return false;
+  }
+  else{
+    alert("Go a head and Donate");
+  }
+  return true;
+}
+</script>
+
+</body>
+</html>

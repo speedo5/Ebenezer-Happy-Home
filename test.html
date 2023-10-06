@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1s ease-in-out;
+            height: 100vh; 
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Define an array of image URLs to use as backgrounds
+        const backgroundImages = [
+            'Mfangano.jpg',
+            'Uncle cosmas.jpg',
+            'poultry farming.jpg',
+            // Add more image URLs as needed
+        ];
+
+        // Function to change the background image
+        function changeBackground() {
+            const randomIndex = Math.floor(Math.random() * backgroundImages.length);
+            const randomImage = backgroundImages[randomIndex];
+            document.body.style.backgroundImage = `url('${randomImage}')`;
+        }
+
+        // Initial background change
+        changeBackground();
+
+        // Set an interval to change the background image every 5 seconds (adjust as needed)
+        const interval = setInterval(changeBackground, 5000); // 5000 milliseconds (5 seconds)
+
+        // Optionally, you can clear the interval after a certain number of iterations
+        // For example, to stop after 10 background changes:
+        // let iterations = 0;
+        // const maxIterations = 10;
+        // const interval = setInterval(() => {
+        //     changeBackground();
+        //     iterations++;
+        //     if (iterations === maxIterations) {
+        //         clearInterval(interval);
+        //     }
+        // }, 5000);
+    </script>
+</body>
+</html>

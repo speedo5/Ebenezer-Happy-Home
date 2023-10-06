@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body{
+        background-color:rgb(218,230,226) ;
+
+    }
+table {
+    position: relative;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 80%;
+  top: 100px;
+  padding: 20px;
+  left: 10%;
+  
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+
+}
+img{
+    width: 15vw;
+    border-radius: 10px;
+    height: auto;
+}
+tr:nth-child(even){background-color:powderblue;}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 8px;
+    width: 100%;
+    background-color: teal;
+    z-index: 99;
+}
+.header h2{
+    font-family: Tahoma;
+    color: #fff;
+    text-align: center;
+}
+button{
+    width: 10vw;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #930707;
+}
+button a{
+    text-decoration: none;
+    color: #fff;
+    font-family: Tahoma;
+    font-size: 1.0vw;
+}
+#popupContainer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#popupContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: left;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+#popupContent h2{
+font-family: Tahoma;
+text-align: center;
+}
+#popupContent p{
+  font-size: 1.5vw;
+  font-family: Tahoma;
+
+}
+#closePopupBtn {
+  background-color: #333;
+  margin: 10px;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+
+    <div class="header">
+        <h2>Staff Information </h2>
+    </div>
+<div >
+  <table>
+
+    <tr>
+      <th>Chairlady</th>
+      <th></th>
+
+
+    </tr>
+    <tr>
+      <td> <img src="isa010.jpg" alt=""> </td>
+      <td>
+<h1>Ruth Akinyi</h1>
+<p>I’m a pastor by 
+  God’s grace and serving the people of Mfangano Island. I’m a 
+  wife and a mother of 6 children. I’m truly blessed to wake up 
+  here every morning and just seeing how God is at work here 
+  by pouring His joy in the lives of these people. It has been a 
+  privilege working with a vibrant community who are optimistic 
+  to overcome their challenges someday. </p>
+
+<button ><a href="">Contact</a></button>
+      </td>
+
+    </tr>
+
+    <tr>
+      <th>Chief Coodinator</th>
+      <th></th>
+
+
+    </tr>
+    <tr>
+      <td> <img src="isa010.jpg" alt=""> </td>
+      <td>
+<h1>Cosmas Otieno</h1>
+<p>I’m a Mfangano Island native. This Island is beautiful and a 
+  mazing place to experience God’s presence from the hills, 
+  black sand beaches, sea breeze, land breeze, the busy fishing 
+  industry, amazing blue and sometimes green waters 
+  surrounding the Island. The people all reflect God’s image 
+  here. I’m a born again Christian and I love serving others first. I 
+  went through the challenging life of an orphan at a tender age (primary grade 7) and by 
+  God’s Grace a Good Samaritan from the US educated me by funding my bachelor’s degree in 
+  education science.  </p>
+    <button  id="popupBtn" >  <a href="">Contact</a> </button>
+
+      </td>
+
+
+      <tr>
+        <th>Treasurer/ Accountant</th>
+        <th></th>
+  
+  
+      </tr>
+      <tr>
+        <td> <img src="isa010.jpg" alt=""> </td>
+        <td>
+  <h1>Roby Oguta</h1>
+  <p> Mfangano Island is my 
+    home and home to many other less fortunate community due to 
+    geographical challenge of being an Island. Not many people or 
+    NGOs or even government itself visit this Island. The people are 
+    very jovial despite the economic challenges they go through. I’m 
+    a graduate accountant from African international University by 
+    God’s grace.  I’m currently serving as project accountant with 
+    Redeemed gospel church development centre in partnership 
+    with compassion Kenya-Oyugis branch. As a born again believer, 
+    my passion is to serve less fortunate people through hands on 
+    projects that can empower them to be self-sustained. </p>
+  
+      <button > <a href="">Contact</a></button>
+
+        </td>
+  
+      </tr>
+      <tr>
+        <th>Secretary/ Assistant Coordinator. </th>
+        <th></th>
+      </tr>
+      <tr>
+        <td> <img src="isa010.jpg" alt=""> </td>
+        <td>
+  <h1>Isaac Matunga</h1>
+  <p> I’m from Mfangano Island and currently a student at The East 
+    African University studying Computer science and IT. I love 
+    playing key-board and singing with the children at Bygrace 
+    home. I coordinate prayers and weekend activities at the 
+    home where we just bond with the children and share God’s 
+    word at the church and at home during my holidays. 
+    Working at the home farm is the highlight of all my holiday 
+    breaks. I get opportunity to serve the children and the old 
+    grandmas with my God given physical energy at the farm 
+    before I can be able to support them financially upon 
+    graduation from my studies </p>
+  
+      <button > <a href="">Contact</a></button>
+
+        </td>
+  
+      </tr>
+
+      <tr>
+        <th>Home and project Manager</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td> <img src="isa010.jpg" alt=""> </td>
+        <td>
+  <h1>Michael Orifa</h1>
+  <p> I was born and 
+    raised on Mfangano Island. I managed to train as primary 
+    teacher currently working with Teachers Service Commission of 
+    Kenya. I’m born again and love Jesus as my personal saviour. I 
+    like to share the love of God with other people especially the 
+    less fortunate on this Island.</p>
+  
+      <button > <a href="">Contact</a></button>
+
+        </td>
+  
+      </tr>
+
+      <tr>
+        <th>Farm Manager</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td> <img src="isa010.jpg" alt=""> </td>
+        <td>
+  <h1>Paul Jomo</h1>
+  <p>  I’m born and raised here on the 
+    Island. I always feel blessed serving these children with the hard 
+    work we all put together at the farm growing fruits, sugarcane, 
+    maize, sweet potatoes, yams, tomatoes, kales, carrots, and much 
+    more.
+    </p>
+  
+      <button > <a href="">Contact</a></button>
+
+        </td>
+  
+      </tr>
+
+      <tr>
+        <th>Home Matron</th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <td> <img src="isa010.jpg" alt=""> </td>
+        <td>
+  <h1>Nelly Sayo</h1>
+  <p> I was born and grew up in 
+    Western –Kenya. I got married on Mfangano Island in 
+    December, 2013. I have since then loved the amazing L. 
+    Victoria that we don’t have back home where I was born. The 
+    people here are kind and loving them is the best gift I can give 
+    in return for the warm welcome in this community. I love the 
+    opportunity I have to mentor the children especially young girls 
+    to be responsible citizens in the near future. 
+    </p>
+  
+      <button > <a href="">Contact</a></button>
+
+        </td>
+  
+      </tr>
+
+
+      <tr>
+        <th> Elder and intercessor/prayer Leader</th>
+        <th></th>
+      </tr>
+     <tr>
+        <td> <img src="isa010.jpg" alt=""> </td>
+        <td>
+  <h1>Mary Aoko</h1>
+  <p> I was born and grew up in 
+    Western –Kenya. I got married on Mfangano Island in 
+    December, 2013. I have since then loved the amazing L. 
+    Victoria that we don’t have back home where I was born. The 
+    people here are kind and loving them is the best gift I can give 
+    in return for the warm welcome in this community. I love the 
+    opportunity I have to mentor the children especially young girls 
+    to be responsible citizens in the near future. 
+    </p>
+  
+      <button > <a href="">Contact</a></button>
+
+        </td>
+  
+      </tr>
+  </table>
+</div>
+
+
+
+ 
+<div id="popupContainer">
+    <div id="popupContent">
+      <h2>Contact us</h2>
+      <br>
+      <p>Phone: 0794463360</p>
+      <p>Email: cosmasotieno@yahoo.com</p> 
+      <p>Facebook: Cosmas Otieno</p>
+      <br>
+      <button id="closePopupBtn">Close</button>
+    </div>
+  </div>
+  
+
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+  const popupContainer = document.getElementById('popupContainer');
+  const popupBtn = document.getElementById('popupBtn');
+  const closePopupBtn = document.getElementById('closePopupBtn');
+  
+  popupBtn.addEventListener('click', function () {
+    popupContainer.style.display = 'block';
+  });
+  
+  closePopupBtn.addEventListener('click', function () {
+    popupContainer.style.display = 'none';
+  });
+  });
+  
+  </script>
+
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/howto/tryit.asp?filename=tryhow_css_table_responsive by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Jan 2020 02:38:49 GMT -->
+</html>

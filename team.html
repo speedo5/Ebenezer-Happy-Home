@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>X-Axis Scroll Button</title>
+</head>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Hide horizontal overflow to prevent browser default scrollbar */
+}
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent content from wrapping to the next line */
+}
+
+.content {
+  width: 1000px; /* Adjust the width based on your content */
+}
+
+.scroll-button {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#scrollLeftButton {
+  left: 0;
+}
+
+#scrollRightButton {
+  right: 0;
+}
+
+</style>
+
+<body>
+  <div class="scroll-container" id="scrollContainer">
+    <!-- Content that needs to be scrolled horizontally -->
+    <div class="content">
+      <!-- Your content goes here -->
+    </div>
+  </div>
+
+  <button class="scroll-button" id="scrollLeftButton">Scroll Left</button>
+  <button class="scroll-button" id="scrollRightButton">Scroll Right</button>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="script.js"></script>
+
+  <script>
+    $(document).ready(function () {
+    const scrollContainer = $('#scrollContainer');
+    const scrollLeftButton = $('#scrollLeftButton');
+    const scrollRightButton = $('#scrollRightButton');
+
+    // Adjust the scroll amount based on your design
+    const scrollAmount = 200;
+
+    // Scroll left
+    scrollLeftButton.click(function () {
+        scrollContainer.animate({
+            scrollLeft: '-=' + scrollAmount
+        }, 500); // Adjust the animation duration as needed
+    });
+
+    // Scroll right
+    scrollRightButton.click(function () {
+        scrollContainer.animate({
+            scrollLeft: '+=' + scrollAmount
+        }, 500);
+    });
+});
+
+  </script>
+</body>
+</html>

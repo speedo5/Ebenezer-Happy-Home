@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Slide-up Div Example</title>
+</head>
+<style>
+    #slideUpDiv {
+  position: fixed;
+  bottom: -100px; /* Adjust this value based on the height of your div */
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  transition: bottom 0.3s ease-out; /* Add a smooth transition effect */
+}
+
+</style>
+
+<body>
+  <div id="slideUpDiv">
+    <p>This is the content of the sliding div.</p>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    $(document).ready(function () {
+  const slideUpDiv = $('#slideUpDiv');
+
+  // Adjust this value based on when you want the div to start sliding up
+  const scrollTrigger = 200;
+
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > scrollTrigger) {
+      slideUpDiv.css('bottom', '0');
+    } else {
+      slideUpDiv.css('bottom', '-100px');
+    }
+  });
+});
+
+  </script>
+</body>
+</html>
